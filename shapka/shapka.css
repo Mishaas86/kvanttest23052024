@@ -1,0 +1,40 @@
+/*шапка*/
+
+.header {
+  width: 100%;
+  background: #0000;
+  padding: 15px 0;
+  z-index: 100;
+
+  -webkit-box-shadow: 0 5px 25px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.15);
+}
+.header__logo-title {
+  text-align: center;
+  color: #ffffff;
+  font-size: 0.5em;
+  font-family: "Bankrus", system-ui;
+  display: inline-block;
+}
+.header__inner {
+  width: 100%;
+  max-width: 2400px;
+
+  position: auto;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: inline-block;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding: 0px;
+}
+
+.header_fixed {
+  position: fixed;
+  left: 0;
+  top: 0;
+}

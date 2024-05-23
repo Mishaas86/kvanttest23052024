@@ -1,0 +1,488 @@
+@font-face {
+  font-family: "Bankrus";
+  src: url("https://cdn.glitch.global/2c5bb731-0877-4403-8e09-0837cae01fe0/bankrus.ttf?v=1697625044169");
+}
+
+
+@import url("https://fonts.googleapis.com/css2?family=Ruda:wght@700&display=swap");
+
+@font-face {
+    font-family: "Ruda";
+    src: url('https://cdn.glitch.global/2c5bb731-0877-4403-8e09-0837cae01fe0/Ruda-Regular.eot?v=1699333888351');
+    src: url('https://cdn.glitch.global/2c5bb731-0877-4403-8e09-0837cae01fe0/Ruda-Regular.eot?v=1699333888351?#iefix') format('embedded-opentype'),
+        url('https://cdn.glitch.global/2c5bb731-0877-4403-8e09-0837cae01fe0/Ruda-Regular.woff2?v=1699333913994') format('woff2'),
+        url('https://cdn.glitch.global/2c5bb731-0877-4403-8e09-0837cae01fe0/Ruda-Regular.woff?v=1699333917696') format('woff'),
+        url('https://cdn.glitch.global/2c5bb731-0877-4403-8e09-0837cae01fe0/Ruda-Regular.svg?v=1699334174524#Ruda-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+:root {
+  --color-bg: #f5cb4e;
+  --color-text-main: #000000;
+  --color-primary: #ffff00;
+  --wrapper-height: 87vh;
+  --image-margin: 3rem;
+  --font-family: "Ruda";
+  --font-family-header: "Ruda";
+}
+
+/*************************************************
+Чтобы canvas был на фоне, а не отдельным элементом
+**************************************************/
+
+/* Чтобы Canvas не загораживал собой поле ввода */
+div {
+  position: relative;
+  text-align: center;
+}
+
+/* Здесь будет анимация поздравления после ввода финального ключа */
+canvas {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+}
+
+/*************************************************/
+
+
+img {
+  display:flex;
+}
+
+/* Basic page style resets */
+* {
+  box-sizing: border-box;
+}
+[hidden] {
+  display: none !important;
+}
+
+body {
+  font-family: "Ruda", system-ui;
+  background-color: var(--color-bg);
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  /*   background: linear-gradient(-45deg, #EC6600, #D63517, #1BAAE3, #A2C617); */
+  background-size: 800% 800%;
+  animation: gradient 15s ease infinite;
+  height: 100vh;
+  text-align: center;
+
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+
+
+/* Page structure */
+.wrapper {
+  min-height: var(--wrapper-height);
+  display: flex;
+  place-items: center;
+  margin: 0 0rem;
+  text-align: center;
+  padding: 5%
+}
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: auto;
+  justify-content: auto;
+  text-align: auto;
+}
+
+/* Very light scaling for our illustration */
+.illustration {
+  display: inline;
+  max-height: 10vh;
+  text-align: right;
+  left:0px;
+
+margin-left:35px;
+  /*   margin-top: var(--image-margin); */
+
+}
+/* Interactive image */
+.illustration:active {
+  transform: translateY(5px);
+}
+
+/* Instructions */
+.instructions {
+  margin: 1rem auto 0;
+}
+
+/* - Add it from the README instructions */
+button {
+  position: center;
+  border: 2px solid white;
+  background: transparent;
+  font-family: inherit;
+  color: white;
+  width: auto;
+  height: auto;
+  font-size: 1em;
+  border-radius: 5px;
+  opacity: 0.5;
+display:inline-block;
+  margin: auto;
+  transition: 0.3s;
+  
+}
+
+button:hover {
+  border: 2px solid #104f55;
+  background-color: rgba(365, 365, 365, 0.5);
+  cursor: pointer;
+  color: #104f55;
+  opacity: 0.8;
+  transition: 0.3s;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+button:active {
+  transform: scale(0.95);
+}
+
+input {
+  font-family: inherit;
+  font-size: 1.5em;
+  background: transparent;
+  border: 1px solid #011110;
+  box-sizing: border-box;
+  border-radius: 4px;
+  padding: 0.5rem 1rem;
+  transition: 500ms;
+  margin: auto;
+}
+input:hover {
+  border: 2px solid #ffffff;
+  opacity: 0.8;
+  transition: 0.1s;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+/* Subheading */
+a {
+  font-family: "Bankrus", system-ui;
+  text-align: center;
+  color: #ffffff;
+  font-size: 1em;
+  padding: 0em;
+  margin: 0em;
+  text-decoration: none;
+}
+h {
+  font-family: "Bankrus", system-ui;
+  text-align: center;
+  color: #ffffff;
+  font-size: 1.1em;
+  position: auto;
+  padding:30px
+}
+h10 {
+  font-family: "Bankrus", system-ui;
+  text-align: right;
+  color: #ffffff;
+  font-size: 1.1em;
+  position: auto;
+  display: inline-block;
+}
+h11 {
+  font-family: "Bankrus", system-ui;
+  text-align: right;
+  color: #ffffff;
+  font-size: 1.1em;
+  position: auto;
+  display: inline-block;
+}
+h12 {
+  font-family: "Bankrus", system-ui;
+  text-align: right;
+  color: #ffffff;
+  font-size: 1.1em;
+  position: auto;
+  display: inline-block;
+}
+h13 {
+  font-family: "Bankrus", system-ui;
+  text-align: right;
+  color: #ffffff;
+  font-size: 1.1em;
+  position: auto;
+  display: inline-block;
+}
+h1 {
+  font-family: "Bankrus", system-ui;
+  text-align: center;
+  color: #ffffff;
+  font-size: 1em;
+  padding: 0;
+  margin: 0em;
+  padding-bottom:30px;
+}
+h2 {
+font-family: "Bankrus", system-ui;
+  text-align: center;
+  color: #ffffff;
+  font-size: 1em;
+  padding: 2em;
+  margin: 0em;
+}
+h3 {
+ font-family: "Bankrus", system-ui;
+  text-align: center;
+  color: #ffffff;
+  font-size: 2em;
+  padding: 0em;
+}
+p {
+  text-align: center;
+  color: white;
+  font-size: 1em;
+  font-family: "Bankrus", system-ui;
+  color: #333366
+}
+p2 {
+  text-align: center;
+  color: #ffffff;
+  font-size: 1em;
+  font-family: "Bankrus", system-ui;
+  padding: 3em;
+  margin: 0em;
+  width: 200px;
+}
+span {
+  color: #ffffff;
+  font-size: 0.5em;
+  font-family: "Bankrus", system-ui;
+  color: #333366;
+    position:center;
+}
+
+span2 {
+  color: #ffffff;
+  font-size: 1em;
+  font-family: "Bankrus", system-ui;
+  color: #333366;
+    position:right;
+  margin:20em;
+     word-spacing:0em;
+}
+
+/*С€Р°РїРєР°*/
+
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap');
+
+
+
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+span1 {
+  font-size: 1em;
+  transform: translate(-50%,-50%);
+  background-image: linear-gradient(gray, white);
+  border-radius: 10px;
+  background-size: 100% 1.5px;
+  background-repeat: no-repeat;
+  background-position: 100% 0%;
+   transition: background-size .7s, background-position .5s ease-in-out;
+      color: #ffffff;
+  font-size: 1.5em;
+  font-family: "Bankrus", system-ui;
+  color: #333366;
+  margin:2em;
+}
+
+span1:hover {
+  background-size: 100% 100%;
+  background-position: 0% 100%;
+  transition: background-position .7s, background-size .5s ease-in-out;
+}
+
+
+
+  
+.card3d1 {
+  text-align: center; /* Центрируем содержимое по горизонтали */
+  padding:50px;
+}
+
+.card3d1 iframe {
+  display: block; /* Убираем встроенный отступ у iframe */
+  margin: auto; /* Центрируем iframe по горизонтали и вертикали */
+    
+}
+
+.card3d2 {
+  text-align: center; /* Центрируем содержимое по горизонтали */
+  padding:50px;
+}
+
+.card3d2 iframe {
+  display: block; /* Убираем встроенный отступ у iframe */
+  margin: auto; /* Центрируем iframe по горизонтали и вертикали */
+}
+.buttonradkvant {
+  position:center;
+  text-align: center;
+  margin:3%;
+}
+form {
+  display:inline-block;
+    margin: auto;
+position:center;
+  margin:3%;
+  
+}
+button1 {
+  position: center;
+  border: 2px solid white;
+  background: transparent;
+  font-family: inherit;
+  color: white;
+  width: 250px;
+  height: 50px;
+  font-size: 1em;
+  border-radius: 5px;
+  opacity: 0.5;
+display:inline-block;
+  margin: auto;
+  transition: 0.3s;
+  
+}
+
+button1:hover {
+  border: 2px solid #104f55;
+  background-color: rgba(365, 365, 365, 0.5);
+  cursor: pointer;
+  color: #104f55;
+  opacity: 0.8;
+  transition: 0.3s;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+button1:active {
+  transform: scale(0.95);
+}
+.card-container2 {
+  display: inline-block;
+
+}
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.image {
+width: 100%;
+height: 100%;
+border-radius: 20px;
+transition: all 0.3s ease-in-out;
+z-index: 20;
+box-shadow: 10px 10px 53px 0px rgba(0, 0, 0, 0.49);
+          display:flex;
+  justify-content: space-around;
+
+}
+.card-wrapper {
+position: relative;
+width: 450px;
+height: 250px;
+border-radius: 20px;
+overflow: hidden;
+transition: all 0.3s ease-in-out;
+box-shadow: 10px 10px 53px 0px rgba(0, 0, 0, 0.49);
+          display:flex;
+  justify-content: space-around;
+        margin:20px;
+}
+.card-wrapper:hover .image {
+filter: blur(1.4px);
+transform: scale(1.5);
+overflow: hidden;
+transition: all 0.3s linear;
+box-shadow: inset -6px -1px 32px 0px rgba(0, 0, 0, 0.75);
+}
+.card-wrapper:hover .card-bottom {
+transform: translate(0%, -50%);
+transition: all 0.8s ease;
+background-color: rgba(110, 122, 92, 0.7);
+}
+.card-top {
+position: relative;
+width: 100%;
+height: 100%;
+z-index: 1;
+}
+.card-bottom {
+width: 100%;
+position: absolute;
+z-index: 20;
+display: auto;
+top: 50%;
+background-color: rgba(110, 122, 92, 0);
+padding: 100px 20px;
+color: #fff;
+transform: translate(100%, -50%);
+}
+.top-text {
+font-size: 17px;
+line-height: 30px;
+font-weight: bold;
+letter-spacing: 1px;
+
+  
+}
+.bottom-text {
+font-size: 15px;
+  
+}
+table {
+  position:center;
+  padding:30px;
+}
+td {
+  padding-bottom: 40px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+
+#videoContainer iframe {
+  width: 500px;
+  height: 500px;
+}
+#openSidebar {
+  display: flex;
+pointer-events: initial;
+  position: absolute;
+
+
+  color: white;
+  transform: translate3d(0, 50%, 0);
+}
+#container {
+  display: flex;
+  position: absolute;
+
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+}

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<title>Соображариум</title>
+<!-- Favicon -->
+<link
+  rel="icon"
+  type="image/png"
+  href="https://cdn.glitch.global/2c5bb731-0877-4403-8e09-0837cae01fe0/%D0%A1%D0%BE%D0%BE%D0%B1%D1%80%D0%B0%D0%B6%D0%B0%D1%80%D0%B8%D1%83%D0%BC_2024.png?v=1710413428139"
+/>
+<!-- The website stylesheet -->
+<link rel="stylesheet" href="/soobr/soobr.css" />
+
+<!-- The website JavaScript file -->
+<script src="/firework.js" defer></script>
+<link rel="stylesheet" href="/shapka/shapka.css" />
+
+<!--
+  В этом элементе будет размещаться анимация
+  фейерверка после прохождения квеста
+-->
+<canvas></canvas>
+
+<html lang="ru">
+  <meta charset="utf-8" />
+  <!-- Метатег для адаптации на мобильных устройствах -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+   <header class="header">
+    
+    <div class="header__logo-wrapper">
+      <a href="https://admhmao.ru" target="_blank"
+        ><img
+          src="https://cdn.glitch.global/2c5bb731-0877-4403-8e09-0837cae01fe0/Coat_of_arms_of_Yugra_(Khanty-Mansia).png?v=1709197654358"
+          class="illustration"
+          title="Герб Югры"
+      /></a>
+      <a
+        href="https://vk.com/kvant86"
+        target="_blank"
+        ><img
+          src="https://cdn.glitch.global/2c5bb731-0877-4403-8e09-0837cae01fe0/%E2%95%A8%D0%A8%D1%82%D0%94%D0%B2%E2%95%A8%D0%A3%E2%95%A0%D0%91%D1%82%D0%99%D0%B0%D1%82%D0%94%D0%B2%D1%82%D0%90%D0%B0%20%E2%95%A8%D0%AC%E2%95%A8%D0%B2%20-%20%E2%95%A8%E2%95%A2%E2%95%A5%D0%A0%D1%82%D0%90%D0%B2%E2%95%A8%E2%96%93%D1%82%D0%99%D0%B0%D1%82%D0%90%D0%B0%E2%95%A8%E2%94%90%403x-8.png?v=1709197648962"
+          class="illustration"
+          title="Мастерская талантов Сибириус"
+      /></a>
+      <img
+        src="https://cdn.glitch.global/2c5bb731-0877-4403-8e09-0837cae01fe0/g8lpz0kdyicbauo17ncaywavh3po2zmr%20%E2%80%94%20%D0%BA%D0%BE%D0%BF%D0%B8%D1%8F.png?v=1709197656964"
+        class="illustration"
+        title="Вы находитесь здесь"
+      />
+      <a href="https://xn--b1acg7bcla5a1cv.xn--p1ai/" target="_blank"
+        ><img
+          src="https://cdn.glitch.global/2c5bb731-0877-4403-8e09-0837cae01fe0/logo-uvyu1.png?v=1709197660008"
+          class="illustration"
+          title="Учусь в Югре"
+      /></a>
+      <a href="https://depobr.admhmao.ru/?login=yes" target="_blank"
+        ><img
+          src="https://cdn.glitch.global/2c5bb731-0877-4403-8e09-0837cae01fe0/%D0%94%D0%B5%D0%BF%D0%B0%D1%80%D1%82%D0%B0%D0%BC%D0%B5%D0%BD%D1%82.png?v=1709197676444"
+          class="illustration"
+          title="Департамент Образования и науки"
+      /></a>
+      <a href="https://национальныепроекты.рф/" target="_blank"
+        ><img
+          src="https://cdn.glitch.global/2c5bb731-0877-4403-8e09-0837cae01fe0/%D0%9E%D0%B1%D1%80%D0%B0%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5_%D0%BB%D0%BE%D0%B3%D0%BE_%D1%86%D0%B2%D0%B5%D1%82_%D0%BB%D0%B5%D0%B2.png?v=1709197664546"
+          class="illustration"
+          title="Национальные проекты России"
+      /></a>
+        <span1><a href="https://kvantorium86.glitch.me">Главная</a></span1>
+      <span1><a href="https://kvantorium86.glitch.me/contact/contact.html">Контакты</a></span1>
+      <div class="header__contents">
+        <div class="header__contacts">
+          <div class="header__tel"></div>
+          <div class="header__tel"></div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <div class="instructions">
+    <main>
+      <!-- Страница с приветствием и кнопкой "Далее" -->
+            <a
+        ><img
+          src="https://cdn.glitch.global/2c5bb731-0877-4403-8e09-0837cae01fe0/%D0%A1%D0%BE%D0%BE%D0%B1%D1%80%D0%B0%D0%B6%D0%B0%D1%80%D0%B8%D1%83%D0%BC_2024.png?v=1710413428139"
+          class="img"
+          title="Соображариум"
+      /></a>
+      <div id="container">
+        <div id="riddle">
+          <h2>
+            Приветствуем вас, юные гении и изобретатели в увлекательном, интеллектуальном приключении «СоображариУМ»! 🎉
+    
+          </h2>
+          <h2>Впереди тебя ждут интересные и познавательные задания. Сможешь ли ты
+            с ними справиться? Давай проверим! Введи в поле первый ключ.
+          </h2>
+        </div>
+        <input type="text" id="answer" />
+        <button onclick="checkAnswer()">Готово!</button>
+      </div>
+
+
+    </main>
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</html>
